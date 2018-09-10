@@ -2,3 +2,95 @@ ID: javahdb
 _schema-version: '2.0'
 description: Demo for connecting HDB from Spring
 version: 0.0.1
+
+modules:
+ - name: hdb
+   type: hdb
+   path: hdb
+   requires:
+    - name: hdi-container
+
+
+ - name: springhdbconnect
+   type: java
+   path: springhdbconnect
+   provides:
+    - name: springhdbconnect_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi-container
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
+
+ 
+
+
+ - name: springPool
+   type: java
+   path: springPool
+   provides:
+    - name: springPool_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi-container
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
+
+ - name: spring
+   type: java
+   path: spring
+   provides:
+    - name: spring_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi-container
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
+
+ 
+
+
+ - name: javaOdata
+   type: java
+   path: javaOdata
+   provides:
+    - name: javaOdata_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi-container
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
+
+ 
+
+
+ - name: spring_test
+   type: java
+   path: spring_test
+   provides:
+    - name: spring_test_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hdi-container
+      properties:
+         JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+
+resources:
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container

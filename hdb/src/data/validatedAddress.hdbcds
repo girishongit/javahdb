@@ -1,0 +1,70 @@
+namespace javaHDBConnet.hdb.data;
+
+context validatedAddress {
+
+ entity here {
+	"fileId"		: Integer;
+	"recordId"		: Integer64;
+	"relavence"		: Double;
+	"matchLevel"	: String(100);
+	"houseNumber"	: String(15);
+	"street"		: String(50);
+	"county"		: String(50);
+	"subDistrict"	: String(50);
+	"district"		: String(50);
+	"city"			: String(50);
+	"state"			: String(50);
+	"postalCode"	: String(25);
+	"country"		: String(50);
+	"formatedAddr"	: String(250);
+	"latitude"		: Double;
+	"longitude"		: Double;
+	"updatedOn"		: UTCDateTime;
+ };
+ 
+  entity bing {
+	"fileId"			: Integer;
+	"recordId"			: Integer64;
+	"confidence"		: Double;
+	"matchEntityType"	: String(100);
+	"matchCodes"		: String(15);
+	"addressLine"		: String(50);
+	"adminDistrict"		: String(50);
+	"adminDistrict2"	: String(50);
+	"locality"			: String(50);
+	"countryRegion"		: String(50);
+	"postalCode"		: String(50);
+	"formatedAddr"		: String(250);
+	"latitude"			: Double;
+	"longitude"			: Double;
+	"updatedOn"			: UTCDateTime;
+ };
+ 
+   entity arcgis {
+	"fileId"			: Integer;
+	"recordId"			: Integer64;
+	"score"				: Double;
+	"matchAddr"			: String(100);
+	"matchAddrType"		: String(15);
+	"houseNumber"		: String(50);
+	"buildingName"		: String(50);
+	"block"				: String(50);
+	"streetName"		: String(50);
+	"sector"			: String(50);
+	"city"				: String(50);
+	"metroArea"			: String(50);
+	"subRegion"			: String(50);
+	"region"			: String(50);
+	"regionAbbr"		: String(50);
+	"postal"			: String(50);
+	"country"			: String(50);
+	"formatedAddr"		: String(250);
+	"unverifiedAddrPart": String(250);
+	"latitude"			: Double;
+	"longitude"			: Double;
+	"updatedOn"			: UTCDateTime;
+ };
+ 
+
+ 
+};

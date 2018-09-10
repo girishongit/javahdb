@@ -1,0 +1,2 @@
+SEQUENCE "javaHDBConnet.hdb.sequence::fileId" START WITH 1
+RESET BY SELECT IFNULL(MAX("fileId"), 1) + 1 FROM "javaHDBConnet.hdb.data::tables.metaData"

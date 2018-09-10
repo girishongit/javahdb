@@ -1,0 +1,53 @@
+namespace javaHDBConnet.hdb.data;
+
+context tables {
+    entity data {
+        "fileId"		: Integer;
+		"recordId"		: Integer64;
+		"firstName"		: String(25);
+		"lastName"		: String(25);
+		"companyName"	: String(25);
+		"houseNumber"	: String(10);
+		"addressLine1"	: String(50);
+		"addressLine2"	: String(50);
+		"city"			: String(50);
+		"county"		: String(50);
+		"state"			: String(50);
+		"postalCode"	: String(10);
+		"country"		: String(50);
+		"primaryPhone"	: String(20);
+		"secondaryPhone": String(20);
+		"email"			: String(75);
+		"webLink"		: String(100);
+        "taxNumber1"    : String(25);
+        "taxNumber2"    : String(25);
+        "VATRegNumber"  : String(25);
+        "stdCommuMtd"   : String(25);
+        "bankKey"       : String(15);
+        "bankAccount"   : Integer;
+        "IBANValue"     : String(50);
+        "payTerms"      : String(10);
+        "isEmailValid"			: Boolean;
+        "isPrimaryPhoneValid"	: Boolean;
+        "isSecondaryPhoneValid" : Boolean;
+        "isTaxNumberValid"		: Boolean;
+        "isVATRegNumberValid"	: Boolean;
+        "addressScore"			: Double;
+	};
+	
+	entity metaData {
+    	"fileId"		: Integer;
+		"fileName"		: String(250);
+		"uploadedBy"	: String(25);
+		"uploadedAt"	: UTCDateTime;
+		"noOfRecords"	: Integer64;
+	};
+	
+	entity vendor{
+		"vendorId"		: Integer;
+		"vendorName"	: String(50);
+		"vendorPhone"	: String(50);
+		"vendorEmail"	: String(50);
+	}
+	
+}
